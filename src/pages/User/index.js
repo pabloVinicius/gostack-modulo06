@@ -44,6 +44,8 @@ const User = ({ navigation }) => {
 
   useEffect(() => {
     loadData();
+
+    return () => changeStars([]);
   }, []);
 
   useEffect(() => {
@@ -54,6 +56,11 @@ const User = ({ navigation }) => {
     changeLoading(true);
     changePage(0);
     changeStars([]);
+  };
+
+  const handleNavigate = repo => {
+    console.tron.log('aqui', repo);
+    navigation.navigate('Repo', { repo });
   };
 
   return (
@@ -78,7 +85,7 @@ const User = ({ navigation }) => {
           onEndReachedThreshold={0.2}
           onEndReached={() => changePage(page + 1)}
           renderItem={({ item }) => (
-            <Starred>
+            <Starred onPress={() => handleNavigate(item)}>
               <OwnerAvatar source={{ uri: item.owner.avatar_url }} />
               <Info>
                 <Title>{item.name}</Title>
@@ -99,6 +106,7 @@ User.navigationOptions = ({ navigation }) => ({
 User.propTypes = {
   navigation: PropTypes.shape({
     getParam: PropTypes.func,
+    navigate: PropTypes.func,
   }).isRequired,
 };
 
