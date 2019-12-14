@@ -3,7 +3,8 @@ import { View, Text } from 'react-native';
 
 // import { Container } from './styles';
 
-const User = () => {
+const User = props => {
+  console.tron.log('user', props);
   return (
     <View>
       <Text>User</Text>
