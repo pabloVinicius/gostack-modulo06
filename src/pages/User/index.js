@@ -59,7 +59,6 @@ const User = ({ navigation }) => {
   };
 
   const handleNavigate = repo => {
-    console.tron.log('aqui', repo);
     navigation.navigate('Repo', { repo });
   };
 
