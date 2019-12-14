@@ -3,16 +3,16 @@ import { View, Text } from 'react-native';
 
 // import { Container } from './styles';
 
-const Main = () => {
+const User = () => {
   return (
     <View>
-      <Text>Main</Text>
+      <Text>User</Text>
     </View>
   );
 };
 
-Main.navigationOptions = {
-  title: 'Main',
+User.navigationOptions = {
+  title: 'User',
 };
 
-export default Main;
+export default User;
